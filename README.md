@@ -1,54 +1,121 @@
-# React + TypeScript + Vite
+# Jonathan's Portfolio — React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, production-grade developer portfolio built with an enterprise mindset.  
+This project leverages scalable architecture, strict typing, automated visual testing, and component-driven development using the latest ecosystem tools.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+| Tool            | Purpose                                                    |
+|-----------------|------------------------------------------------------------|
+| **React 19**    | UI library for declarative, component-driven interfaces    |
+| **TypeScript**  | Static typing for reliability and self-documented code     |
+| **Vite**        | Lightning-fast bundler with HMR and TS-first setup         |
+| **Tailwind CSS**| Utility-first CSS framework for styling                    |
+| **React Router**| SPA navigation with nested routes and layouts              |
+| **Zod**         | Schema validation for forms and type inference             |
+| **React Hook Form** | Optimized, flexible forms with minimal re-renders     |
+| **Storybook**   | Isolated component development, visual docs & snapshots    |
+| **Chromatic**   | CI for Storybook with visual regression testing            |
+| **Framer Motion**| Animation library for micro-interactions and UX polish    |
+| **clsx / cva**  | Dynamic class management with variants                     |
+| **Lucide-react**| Icon system with Tailwind-ready SVGs                       |
+| **ESLint + Prettier** | Code style consistency and linting best practices   |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 👢 Project Structure
+
+```
+src/
+│
+├── assets/         # Static images, icons, logos
+├── components/     # Atomic design system (atoms, molecules, organisms)
+├── constants/      # Global constants (enums, configs, keys)
+├── hooks/          # Custom React hooks
+├── layout/         # Layout components like <MainLayout />
+├── lib/            # Utilities, API clients, formatters
+├── pages/          # Page-level components (used by router)
+├── router/         # Centralized route definitions with React Router v6+
+├── styles/         # Tailwind config, global styles, theming
+├── types/          # Shared TypeScript types and interfaces
+├── App.tsx         # Entry point component with RouterProvider
+└── main.tsx        # Vite entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This structure follows **Atomic Design + Scalable Feature-based Separation**, making it easy to maintain, test, and grow with new features or domains.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 📚 Storybook Integration
+
+This project uses Storybook with:
+
+- Tailwind theming (light/dark toggle)
+- `@storybook/test` for snapshot visual testing
+- Component-driven workflows with isolated `Input`, `Form`, and more
+- Chromatic CI integration for visual regression testing
+
+Run Storybook locally:
+
+```bash
+yarn storybook
 ```
+
+---
+
+## ✅ Chromatic Visual CI
+
+This project runs **Chromatic** on every PR using GitHub Actions:
+
+- Blocks merges if visual diffs are found
+- Publishes a preview of the full Storybook
+- Snapshot testing per component story
+
+> Add your badge from Chromatic once deployed
+
+---
+
+## 📦 Scripts
+
+```bash
+yarn dev             # Local dev server (Vite)
+yarn build           # Production build
+yarn preview         # Preview production locally
+yarn storybook       # Run Storybook locally
+yarn chromatic       # Run Chromatic visual CI
+yarn lint            # Run ESLint
+```
+
+---
+
+## 👨‍💻 Dev Notes
+
+This setup is built for clarity, scale, and flexibility:
+
+- Uses `vite-tsconfig-paths` for `@/` aliasing
+- Strict linting rules for consistency
+- Modular component layers (atoms → molecules → organisms)
+- Tailwind integrated into Storybook previews
+- Ready for feature flags, async loading, and SSR if needed
+
+---
+
+## 🥪 Testing Setup
+
+Coming soon: integration with `Vitest`, `Testing Library`, and `@storybook/test-runner`.
+
+---
+
+## 🙌 Contributions
+
+This is a personal project for my portfolio and technical showcase. If you'd like to collaborate or ask anything, feel free to open a discussion or PR!
+
+---
+
+## 📧 Contact
+
+Built with ❤️ by Jonathan Arturo López de la Garza  
+[LinkedIn](https://www.linkedin.com/in/your-profile/) • [Twitter](https://twitter.com/your_handle) • [Portfolio](https://your-site.com)
+
