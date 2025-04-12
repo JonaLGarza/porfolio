@@ -17,7 +17,7 @@ export const Basic: StoryObj<typeof Input> = {
 
 export const WithError: StoryObj<typeof Input> = {
   args: {
-    label: "Your email",
+    label: "Your email here",
     placeholder: "Enter your email",
     error: "This field is required.",
   },
