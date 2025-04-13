@@ -128,5 +128,8 @@ This is a personal project for my portfolio and technical showcase. If you'd lik
 ## 📧 Contact
 
 Built with ❤️ by Jonathan Arturo López de la Garza  
-[LinkedIn](https://www.linkedin.com/in/jonathan-arturo-lopez-de-la-garza) • [Twitter](https://twitter.com/your_handle) • [Portfolio](https://your-site.com)
+• [LinkedIn](https://www.linkedin.com/in/your-profile/)
+• [Twitter](https://twitter.com/your_handle)
+• [My Storybook Live!](https://67faeb0c6c52986ce6872a8d-nwxrkfagke.chromatic.com/)
+• [Chromatic  library](https://www.chromatic.com/library?appId=67faeb0c6c52986ce6872a8d)
 
