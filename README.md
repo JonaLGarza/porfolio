@@ -73,7 +73,7 @@ This project runs **Chromatic** on every PR using GitHub Actions:
 - Publishes a preview of the full Storybook
 - Snapshot testing per component story
 
-> Add your badge from Chromatic once deployed
+[![Chromatic](https://github.com/JonaLGarza/porfolio/actions/workflows/chromatic.yml/badge.svg)](https://github.com/JonaLGarza/porfolio/actions/workflows/chromatic.yml)
 
 ---
 
@@ -108,6 +108,17 @@ Coming soon: integration with `Vitest`, `Testing Library`, and `@storybook/test-
 
 ---
 
+## 📘 Storybook Dev Notes
+
+For developers:
+
+- All components follow atomic structure (`atoms`, `molecules`, `organisms`)
+- Write stories using `CSF` and `autodocs` tags for automated documentation
+- Test accessibility and interaction with `@storybook/test`, `@storybook/addon-a11y`, and `@storybook/test-runner`
+- Run `yarn test-storybook` to generate interaction test snapshots (coming soon)
+
+---
+
 ## 🙌 Contributions
 
 This is a personal project for my portfolio and technical showcase. If you'd like to collaborate or ask anything, feel free to open a discussion or PR!
@@ -117,8 +128,5 @@ This is a personal project for my portfolio and technical showcase. If you'd lik
 ## 📧 Contact
 
 Built with ❤️ by Jonathan Arturo López de la Garza  
-• [LinkedIn](https://www.linkedin.com/in/your-profile/)
-• [Twitter](https://twitter.com/your_handle)
-• [My Storybook Live!](https://67faeb0c6c52986ce6872a8d-nwxrkfagke.chromatic.com/)
-• [Chromatic  library](https://www.chromatic.com/library?appId=67faeb0c6c52986ce6872a8d)
+[LinkedIn](https://www.linkedin.com/in/jonathan-arturo-lopez-de-la-garza) • [Twitter](https://twitter.com/your_handle) • [Portfolio](https://your-site.com)
 
