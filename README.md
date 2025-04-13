@@ -7,21 +7,21 @@ This project leverages scalable architecture, strict typing, automated visual te
 
 ## 🚀 Tech Stack
 
-| Tool            | Purpose                                                    |
-|-----------------|------------------------------------------------------------|
-| **React 19**    | UI library for declarative, component-driven interfaces    |
-| **TypeScript**  | Static typing for reliability and self-documented code     |
-| **Vite**        | Lightning-fast bundler with HMR and TS-first setup         |
-| **Tailwind CSS**| Utility-first CSS framework for styling                    |
-| **React Router**| SPA navigation with nested routes and layouts              |
-| **Zod**         | Schema validation for forms and type inference             |
-| **React Hook Form** | Optimized, flexible forms with minimal re-renders     |
-| **Storybook**   | Isolated component development, visual docs & snapshots    |
-| **Chromatic**   | CI for Storybook with visual regression testing            |
-| **Framer Motion**| Animation library for micro-interactions and UX polish    |
-| **clsx / cva**  | Dynamic class management with variants                     |
-| **Lucide-react**| Icon system with Tailwind-ready SVGs                       |
-| **ESLint + Prettier** | Code style consistency and linting best practices   |
+| Tool            | Purpose                                                          |
+|-----------------|------------------------------------------------------------------|
+| **React 19**          | UI library for declarative, component-driven interfaces    |
+| **TypeScript**        | Static typing for reliability and self-documented code     |
+| **Vite**              | Lightning-fast bundler with HMR and TS-first setup         |
+| **Tailwind CSS**      | Utility-first CSS framework for styling                    |
+| **React Router**      | SPA navigation with nested routes and layouts              |
+| **Zod**               | Schema validation for forms and type inference             |
+| **React Hook Form**   | Optimized, flexible forms with minimal re-renders          |
+| **Storybook**         | Isolated component development, visual docs & snapshots    |
+| **Chromatic**         | CI for Storybook with visual regression testing            |
+| **Framer Motion**     | Animation library for micro-interactions and UX polish     |
+| **clsx / cva**        | Dynamic class management with variants                     |
+| **Lucide-react**      | Icon system with Tailwind-ready SVGs                       |
+| **ESLint + Prettier** | Code style consistency and linting best practices          |
 
 ---
 
