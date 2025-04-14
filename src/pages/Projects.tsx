@@ -1,3 +1,5 @@
+import Projects from "../components/organisms/Projects/Projects";
+
 export default function ProjectsPage() {
-    return <div className="text-center">Welcome to the Projects Page</div>;
-  }
+    return <Projects />
+}
