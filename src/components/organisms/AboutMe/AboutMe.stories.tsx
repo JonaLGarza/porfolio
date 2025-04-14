@@ -3,7 +3,10 @@ import AboutMe from "./AboutMe";
 
 const meta: Meta<typeof AboutMe> = {
   component: AboutMe,
-  tags: ["autodocs"],
+  tags: ["autodocs", "chromatic"],
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 };
 
 export default meta;
