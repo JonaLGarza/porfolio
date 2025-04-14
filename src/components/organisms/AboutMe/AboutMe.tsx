@@ -12,7 +12,7 @@ const AboutMe = () => {
         transition={{ duration: 0.6 }}
       >
         <Avatar className="h-24 w-24 border-2 border-primary shadow-md">
-          <AvatarImage src="/profile.jpg" alt="Jonathan Lopez" />
+          <AvatarImage src="/me.jpg" alt="Jonathan Lopez" />
           <AvatarFallback>JL</AvatarFallback>
         </Avatar>
       </motion.div>
