@@ -5,7 +5,10 @@ import { ComponentProps, useCallback } from "react";
 
 const meta: Meta<typeof ProjectFilter> = {
   component: ProjectFilter,
-  tags: ["autodocs"],
+  tags: ["autodocs", "chromatic"],
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 };
 
 export default meta;
