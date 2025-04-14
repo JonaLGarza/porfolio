@@ -3,7 +3,10 @@ import Projects from "./Projects";
 
 const meta: Meta<typeof Projects> = {
   component: Projects,
-  tags: ["autodocs"],
+  tags: ["autodocs", "chromatic"],
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 };
 
 export default meta;
