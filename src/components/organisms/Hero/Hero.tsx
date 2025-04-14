@@ -39,7 +39,7 @@ const Hero = () => {
         transition={{ delay: 0.6, duration: 0.4 }}
       >
         <Button>
-          <a href="#projects" onClick={() => navigate("/projects")}>See My Work</a>
+          <a href="/projects" onClick={() => navigate("/projects")}>See My Work</a>
         </Button>
       </motion.div>
     </section>
