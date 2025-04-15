@@ -1,46 +1,21 @@
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import Button from "../components/atoms/Button";
+import useMobileDrawer from "../hooks/useMobileDrawer";
 
 export default function MainLayout() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-  const menuRef = useRef<HTMLDivElement>(null);
+  const {
+    menuOpen,
+    menuRef,
+    toggleMenu,
+    closeMenu,
+  } = useMobileDrawer();
 
   const handleToggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setMenuOpen(false);
-      }
-    };
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setMenuOpen(false);
-      }
-    };
-
-    if (menuOpen) {
-      document.addEventListener("keydown", handleEscape);
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuOpen]);
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500 p-6">
@@ -51,7 +26,7 @@ export default function MainLayout() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={toggleMenu}
             aria-label="Toggle Menu"
           >
             <span className={`transition-transform duration-300 ${menuOpen ? "rotate-90 scale-110" : "rotate-0"}`}>
@@ -89,7 +64,7 @@ export default function MainLayout() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 aria-label="Close Menu"
               >
                 <X className="size-4 transition-transform duration-300 hover:rotate-90" />
