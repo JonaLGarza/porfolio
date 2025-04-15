@@ -10,7 +10,7 @@ export default function HomePage() {
           name="description"
           content="Portfolio of Jonathan Arturo López de la Garza, Senior Frontend Engineer specialized in React, TypeScript, and enterprise-grade UI."
         />
-        </Helmet>
+      </Helmet>
       <main>
         <Hero />
         <AboutMe />
