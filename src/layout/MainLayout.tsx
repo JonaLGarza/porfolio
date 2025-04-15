@@ -1,10 +1,12 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { useState } from "react";
 import Button from "../components/atoms/Button";
 
 export default function MainLayout() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleToggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -15,7 +17,20 @@ export default function MainLayout() {
       <header className="flex justify-between items-center mb-10">
         <h1 className="text-xl font-bold">Jonathan Lopez</h1>
 
-        <nav className="space-x-4 text-muted-foreground text-sm">
+        {/* Mobile menu button */}
+        <div className="sm:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+          </Button>
+        </div>
+
+        {/* Desktop nav */}
+        <nav className="hidden sm:flex space-x-4 text-muted-foreground text-sm">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -42,19 +57,66 @@ export default function MainLayout() {
           </NavLink>
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleToggleTheme}
-          aria-label="Toggle Theme"
-        >
-          {resolvedTheme === "dark" ? (
-            <Sun className="size-4" />
-          ) : (
-            <Moon className="size-4" />
-          )}
-        </Button>
+        <div className="hidden sm:block">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleToggleTheme}
+            aria-label="Toggle Theme"
+          >
+            {resolvedTheme === "dark" ? (
+              <Sun className="size-4" />
+            ) : (
+              <Moon className="size-4" />
+            )}
+          </Button>
+        </div>
       </header>
+
+      {/* Mobile nav */}
+      {menuOpen && (
+        <nav className="sm:hidden flex flex-col gap-3 mb-6 text-sm text-muted-foreground">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-primary font-semibold" : ""
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? "text-primary font-semibold" : ""
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-primary font-semibold" : ""
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </NavLink>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleToggleTheme}
+            aria-label="Toggle Theme"
+          >
+            {resolvedTheme === "dark" ? (
+              <Sun className="size-4" />
+            ) : (
+              <Moon className="size-4" />
+            )}
+          </Button>
+        </nav>
+      )}
 
       <Outlet />
     </div>
