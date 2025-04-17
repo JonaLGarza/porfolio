@@ -6,11 +6,12 @@ interface ButtonProps {
   asChild?: boolean;
   size?: "default" | "sm" | "lg" | "icon";
   onClick?: () => void;
+  className?: string;
 }
 
-export default function Button({ children, variant = "default", asChild = false, size = "default", onClick }: ButtonProps) {
+export default function Button({ children, variant = "default", asChild = false, size = "default", onClick, className }: ButtonProps) {
   return (
-    <ShadButton variant={variant} asChild={asChild} size={size} onClick={onClick}>
+    <ShadButton variant={variant} asChild={asChild} size={size} onClick={onClick} className={className}>
       {children}
     </ShadButton>
   );
