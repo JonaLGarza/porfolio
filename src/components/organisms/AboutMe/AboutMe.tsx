@@ -1,32 +1,12 @@
 import { motion } from "framer-motion";
-import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import Button from "../../atoms/Button";
 import { Download } from "lucide-react";
+import ResumeHeader from "../ResumeeHeader/ResumeeHeader";
 
 const AboutMe = () => {
   return (
-    <section className="py-5 px-4 md:py-5 max-w-3xl mx-auto text-center">
-      <motion.div
-        className="flex justify-center mb-6"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Avatar className="h-24 w-24 border-2 border-primary shadow-md">
-          <AvatarImage src="/me.jpg" alt="Jonathan Lopez" />
-          <AvatarFallback>JL</AvatarFallback>
-        </Avatar>
-      </motion.div>
-
-      <motion.h2
-        className="text-3xl font-bold mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        About Me
-      </motion.h2>
-
+    <section className="py-5 px-4 md:py-5 max-w-4xl mx-auto">
+      <ResumeHeader />
       <motion.p
         className="text-muted-foreground text-lg leading-relaxed mb-6"
         initial={{ opacity: 0, y: 10 }}
