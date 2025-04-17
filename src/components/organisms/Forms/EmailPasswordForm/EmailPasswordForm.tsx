@@ -24,9 +24,9 @@ export default function EmailPasswordForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
       <Input label="Name" placeholder="John Doe" {...register("name")}
-        error={errors.name?.message} />
+        error={errors.name?.message as string} />
       <Input label="Email" placeholder="john@example.com" {...register("email")}
-        error={errors.email?.message} />
+        error={errors.email?.message as string} />
       <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
         Submit
       </button>
