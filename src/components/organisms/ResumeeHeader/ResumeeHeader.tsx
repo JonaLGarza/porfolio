@@ -34,7 +34,7 @@ export default function ResumeHeader() {
         transition={{ duration: 0.6 }}
       >
         <Avatar className="h-24 w-24 border-2 border-primary shadow-md mb-4 sm:mb-0">
-          <AvatarImage src="/me.jpg" alt="Jonathan Lopez" />
+          <AvatarImage src="/porfolio/me.jpg" alt="Jonathan Lopez" />
           <AvatarFallback>JL</AvatarFallback>
         </Avatar>
         <div className="text-center sm:text-left pt-5">

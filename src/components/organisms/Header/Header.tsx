@@ -34,9 +34,9 @@ export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
       </div>
 
       <nav className="hidden sm:flex space-x-4 text-muted-foreground text-sm">
-        <NavLink to="/" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Home</NavLink>
-        <NavLink to="/projects" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Projects</NavLink>
-        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Contact</NavLink>
+        <NavLink to="/porfolio" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Home</NavLink>
+        <NavLink to="/porfolio/projects" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Projects</NavLink>
+        <NavLink to="/porfolio/contact" className={({ isActive }) => isActive ? "text-primary font-semibold" : ""}>Contact</NavLink>
       </nav>
 
       <div className="hidden sm:block">

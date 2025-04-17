@@ -6,12 +6,12 @@ import ProjectsPage from "../pages/Projects";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/porfolio",
     element: <MainLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "projects", element: <ProjectsPage /> },
-      { path: "contact", element: <ContactPage /> },
+      { path: "/porfolio/projects", element: <ProjectsPage /> },
+      { path: "/porfolio/contact", element: <ContactPage /> },
     ],
   },
 ]);

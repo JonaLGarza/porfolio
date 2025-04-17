@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/porfolio/' : '/', // ✅ match your repo name exactly
+export default defineConfig(() => ({
+  base: '/porfolio/',
   plugins: [
     react(),
     tailwindcss(),
