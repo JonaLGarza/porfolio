@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import Button from "../../atoms/Button";
+import { Download } from "lucide-react";
 
 const AboutMe = () => {
   return (
-    <section className="py-20 px-4 md:py-32 max-w-3xl mx-auto text-center">
+    <section className="py-5 px-4 md:py-5 max-w-3xl mx-auto text-center">
       <motion.div
         className="flex justify-center mb-6"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -41,8 +42,9 @@ const AboutMe = () => {
         transition={{ delay: 0.6, duration: 0.4 }}
       >
         <Button variant="secondary" asChild>
+
           <a href="/jonathanlopezresumee.pdf" download>
-            Download Resume
+            <Download size={16} />Download Resume
           </a>
         </Button>
       </motion.div>
