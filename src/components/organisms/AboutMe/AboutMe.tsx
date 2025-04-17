@@ -23,7 +23,7 @@ const AboutMe = () => {
       >
         <Button variant="secondary" asChild>
 
-          <a href="/jonathanlopezresumee.pdf" download>
+          <a href="/porfolio/jonathanlopezresumee.pdf" download>
             <Download size={16} />Download Resume
           </a>
         </Button>

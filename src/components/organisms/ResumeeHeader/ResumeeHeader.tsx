@@ -64,7 +64,7 @@ export default function ResumeHeader() {
         <p className="flex items-center justify-center md:justify-end gap-2">
           <Linkedin className="w-4 h-4" />
           <a
-            href="https://linkedin.com/in/jonathan-arturo-lopez-de-la-garza"
+            href="https://www.linkedin.com/in/jonathanlgarza/"
             target="_blank"
             className="underline"
           >
