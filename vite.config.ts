@@ -3,15 +3,13 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-const isProd = process.env.NODE_ENV === 'production';
-
-export default defineConfig({
-  base: isProd ? '/porfolio/' : '/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/porfolio/' : '/', // ✅ match your repo name exactly
   plugins: [
     react(),
     tailwindcss(),
     tsconfigPaths({
-      projects: ["tsconfig.app.json"],
+      projects: ['tsconfig.app.json'],
     }),
   ],
-});
+}));
