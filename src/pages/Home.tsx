@@ -1,6 +1,8 @@
 import AboutMe from "../components/organisms/AboutMe/AboutMe";
 import { Helmet } from 'react-helmet-async';
-import SkillsTimelineSection from "../components/organisms/SkillsTimelineSection/SkillsTimelineSection";
+import ProjectsSkillsSection from "../components/organisms/ProjectSkillsSection/ProjectSkillSection";
+import ResumeFooterIcons from "../components/organisms/ResumeeFooterIcons/ResumeeFooterIcons";
+import TimelineSection from "../components/organisms/TimeLineSection.tsx/TimeLineSection";
 
 export default function HomePage() {
     return <>
@@ -12,9 +14,10 @@ export default function HomePage() {
         />
       </Helmet>
       <main>
-        {/* <Hero /> */}
         <AboutMe />
-        <SkillsTimelineSection />
+        <ProjectsSkillsSection />
+        <TimelineSection />
+        <ResumeFooterIcons />
       </main>
       <footer className="text-center py-10 text-sm text-muted-foreground">
         © {new Date().getFullYear()} Jonathan Lopez. All rights reserved.
