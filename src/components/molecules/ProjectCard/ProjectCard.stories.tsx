@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ProjectCard } from "./ProjectCard";
 
 const meta: Meta<typeof ProjectCard> = {
-  title: "Molecules/ProjectCard",
   component: ProjectCard,
   tags: ["autodocs"],
   parameters: {

@@ -3,7 +3,6 @@ import Contact from "./Contact";
 
 const meta: Meta<typeof Contact> = {
   component: Contact,
-  title: "Organisms/Contact",
   tags: ["autodocs", "chromatic"],
   parameters: {
     chromatic: { disableSnapshot: false },
