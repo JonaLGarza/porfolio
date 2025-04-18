@@ -41,7 +41,7 @@ export default function MobileMenu({ menuOpen, menuRef, closeMenu }: MobileMenuP
           {["Home", "Projects", "Contact"].map((label, index) => (
             <NavLink
               key={label}
-              to={`/${label.toLowerCase() === "home" ? "/porfolio/" : "/porfolio/" + label.toLowerCase()}`}
+              to={`${label.toLowerCase() === "home" ? "/porfolio/" : "/porfolio/" + label.toLowerCase()}`}
               className={({ isActive }) =>
                 `transition-opacity transform duration-500 ease-out delay-${index * 100} ${isActive ? "text-primary font-semibold" : "opacity-80 hover:opacity-100"}`
               }
