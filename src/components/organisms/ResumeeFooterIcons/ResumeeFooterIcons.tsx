@@ -44,7 +44,7 @@ export default function ResumeFooterIcons() {
       <h2 className="text-xl font-semibold mb-6">Tech Stack</h2>
       <div
         ref={carouselRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide whitespace-nowrap"
+        className="flex gap-6 overflow-x-auto scrollbar-hide whitespace-nowrap no-scrollbar"
       >
         {[...icons, ...icons].map(({ icon: Icon, label }, idx) => (
           <div
