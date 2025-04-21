@@ -9,13 +9,7 @@ interface TimelineItemProps {
 
 const timelineData: TimelineItemProps[] = [
   {
-    year: "2024 – Present",
-    title: "Senior Frontend Engineer – ZaiNar",
-    description: "Leading frontend for a 3D signal visualization platform using React, Tailwind CSS, Three.js, and Storybook.",
-    icon: <Briefcase className="size-4" />,
-  },
-  {
-    year: "2020 – 2023",
+    year: "2020 – Present",
     title: "Senior Frontend Developer – ArteDigital",
     description: "Developed and deployed 6+ scalable apps with advanced A/B testing, Storybook integration, and atomic design.",
     icon: <Briefcase className="size-4" />,
