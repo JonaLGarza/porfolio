@@ -13,7 +13,7 @@ export default function ResumeHeader() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute top-14 h-30 w-30 bg-purple-500/20 rounded-full blur-sm animate-pulse"></div>
+        <div className="absolute top-29 left-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 bg-purple-500/50 rounded-full blur-xs animate-pulse sm:top-15 sm:left-2 sm:translate-x-0 sm:translate-y-0" />
       </motion.div>
 
       {/* Section Heading */}
