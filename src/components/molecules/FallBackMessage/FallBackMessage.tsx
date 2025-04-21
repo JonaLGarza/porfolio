@@ -1,7 +1,8 @@
-import { AlertTriangle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { AlertTriangle, Home, RefreshCw, Bug } from "lucide-react";
 
-export function FallbackMessage({
+function FallbackMessage({
   title = "Oops!",
   message = "Something went wrong."
 }: { title?: string; message?: string }) {
@@ -15,25 +16,52 @@ export function FallbackMessage({
     navigate("/porfolio");
   };
 
+  const handleReportIssue = () => {
+    window.open("https://github.com/JonaLGarza/porfolio/issues", "_blank");
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center py-16 text-center text-muted-foreground">
-      <AlertTriangle className="w-10 h-10 text-red-500 mb-4" />
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p className="max-w-md mb-6">{message}</p>
-      <div className="flex gap-4">
-        <button
-          onClick={handleReload}
-          className="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded hover:bg-red-600"
-        >
-          Reload Page
-        </button>
-        <button
-          onClick={handleGoHome}
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded hover:bg-blue-600"
-        >
-          Go to Homepage
-        </button>
-      </div>
+    <div className="relative flex flex-col items-center justify-center py-20 px-6 text-center text-muted-foreground overflow-hidden">
+      {/* Animated background shape */}
+      <motion.div
+        className="absolute w-[500px] h-[500px] bg-purple-500/10 rounded-full -z-10 blur-3xl"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+      />
+
+      <motion.div
+        className="p-10 bg-background border border-muted rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
+        <AlertTriangle className="w-14 h-14 text-destructive mb-4 animate-bounce" />
+        <h2 className="text-3xl font-bold mb-3 text-foreground">{title}</h2>
+        <p className="max-w-md mx-auto mb-6 text-muted-foreground text-base">{message}</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={handleReload}
+            className="px-5 py-2 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600 transition inline-flex items-center gap-2 cursor-pointer"
+          >
+            <RefreshCw size={16} /> Reload Page
+          </button>
+          <button
+            onClick={handleGoHome}
+            className="px-5 py-2 text-sm font-medium text-white bg-secondary rounded-md hover:bg-primary/80 transition inline-flex items-center gap-2 cursor-pointer"
+          >
+            <Home size={16} /> Go to Homepage
+          </button>
+          <button
+            onClick={handleReportIssue}
+            className="px-5 py-2 text-sm font-medium text-white bg-zinc-600 rounded-md hover:bg-zinc-700 transition inline-flex items-center gap-2 cursor-pointer"
+          >
+            <Bug size={16} /> Report Issue
+          </button>
+        </div>
+      </motion.div>
     </div>
   );
 }
+
+export default FallbackMessage;
