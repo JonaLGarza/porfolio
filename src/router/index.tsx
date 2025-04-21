@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import MainLayout from "../layout/MainLayout";
 import { LazyWrapper } from "../components/atoms/LazyWrapper/LazyWrapper";
-import { FallbackMessage } from "../components/molecules/FallBackMessage/FallBackMessage";
 
 const HomePage = lazy(() => import("../pages/Home"));
 const ProjectsPage = lazy(() => import("../pages/Projects"));
 const ContactPage = lazy(() => import("../pages/Contact"));
+const FallbackMessage = lazy(() => import("../components/molecules/FallBackMessage/FallBackMessage"));
 
 export const router = createBrowserRouter([
   {
