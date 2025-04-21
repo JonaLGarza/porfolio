@@ -163,9 +163,9 @@ export default defineConfig({
 Senior Frontend Engineer — React | TypeScript | DevOps Curious  
 🧠 Always learning | 🎯 Focused on clean UX | 💻 Lives in Saltillo, MX
 
-- 💼 [LinkedIn](https://linkedin.com/in/jonathan-arturo-lopez-de-la-garza)
+- 💼 [LinkedIn](https://www.linkedin.com/in/jonathanlgarza/)
 - 🧠 [GitHub](https://github.com/JonaLGarza)
-- 📘 [Storybook Live](https://67faeb0c6c52986ce6872a8d-wmhqxulzdj.chromatic.com/)
+- 📘 [Storybook Live](https://67faeb0c6c52986ce6872a8d-ufsjvdyguk.chromatic.com/)
 - 🧪 [Chromatic Library](https://www.chromatic.com/library?appId=67faeb0c6c52986ce6872a8d)
 
 ---
