@@ -1,32 +1,41 @@
-import { Component, ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import FallbackMessage from "../../molecules/FallBackMessage/FallBackMessage";
 
-interface ErrorBoundaryProps {
-  children: ReactNode;
+export function ErrorBoundary({ children }: { children: ReactNode }) {
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    const errorHandler = (event: ErrorEvent) => {
+      event.preventDefault();
+      setHasError(true);
+    };
+
+    window.addEventListener("error", errorHandler);
+    return () => window.removeEventListener("error", errorHandler);
+  }, []);
+
+  if (hasError) {
+    return <FallbackMessage title="Oops!" message="Something went wrong." />;
+  }
+
+  return <>{children}</>;
 }
 
-interface ErrorBoundaryState {
-  hasError: boolean;
-}
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
+// Fix for the story error: export a real component that throws an error
+export function ErrorThrowingComponent() {
+  const [shouldThrow, setShouldThrow] = useState(false);
+
+  if (shouldThrow) {
+    throw new Error("Simulated error for testing ErrorBoundary");
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: unknown, errorInfo: unknown) {
-    console.error("Uncaught error:", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <FallbackMessage  title="Oops!" message="Something went wrong." />;
-    }
-    return this.props.children;
-  }
+  return (
+    <button
+      onClick={() => setShouldThrow(true)}
+      className="px-4 py-2 bg-red-500 text-white rounded"
+    >
+      Trigger Error
+    </button>
+  );
 }
