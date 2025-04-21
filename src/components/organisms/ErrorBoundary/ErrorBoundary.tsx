@@ -1,5 +1,5 @@
 import { Component, ReactNode } from "react";
-import { FallbackMessage } from "../../molecules/FallBackMessage/FallBackMessage";
+import FallbackMessage from "../../molecules/FallBackMessage/FallBackMessage";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
