@@ -4,12 +4,15 @@ import App from "./App";
 import "./styles/global.css";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "next-themes";
+import { ErrorBoundary } from "./components/organisms/ErrorBoundary/ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HelmetProvider>
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </ThemeProvider>
     </HelmetProvider>
   </React.StrictMode>
