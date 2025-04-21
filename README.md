@@ -1,134 +1,179 @@
 # Jonathan's Portfolio — React + TypeScript + Vite
 
-A modern, production-grade developer portfolio built with an enterprise mindset.  
-This project leverages scalable architecture, strict typing, automated visual testing, and component-driven development using the latest ecosystem tools.
+A fully responsive, developer-focused portfolio built using scalable architecture, atomic design, and best-in-class tooling.  
+This project showcases UI craftsmanship, robust code organization, and progressive enhancement using the modern React ecosystem.
+
+---
+
+## 🧠 Highlights
+
+- ⚛️ **Built with React 19** and **TypeScript** using **Vite** for lightning-fast dev experience
+- 🌙 **Dark mode** with `next-themes` and localStorage support
+- 🧱 **Atomic Design System** (Atoms → Molecules → Organisms)
+- 🧪 **Storybook with Chromatic CI** for visual regression testing
+- 💥 **Custom Error Boundary** with animated fallback and GitHub issue linking
+- 🎨 **Framer Motion** for elegant transitions and interactions
+- 💅 **TailwindCSS** for fast, composable styling
+- 🔁 **React Router v6+** with lazy-loaded routes & Suspense fallback
+- ⚙️ Strict ESLint/Prettier rules using Airbnb base and CVA for variant support
 
 ---
 
 ## 🚀 Tech Stack
 
-| Tool            | Purpose                                                          |
-|-----------------|------------------------------------------------------------------|
-| **React 19**          | UI library for declarative, component-driven interfaces    |
-| **TypeScript**        | Static typing for reliability and self-documented code     |
-| **Vite**              | Lightning-fast bundler with HMR and TS-first setup         |
-| **Tailwind CSS**      | Utility-first CSS framework for styling                    |
-| **React Router**      | SPA navigation with nested routes and layouts              |
-| **Zod**               | Schema validation for forms and type inference             |
-| **React Hook Form**   | Optimized, flexible forms with minimal re-renders          |
-| **Storybook**         | Isolated component development, visual docs & snapshots    |
-| **Chromatic**         | CI for Storybook with visual regression testing            |
-| **Framer Motion**     | Animation library for micro-interactions and UX polish     |
-| **clsx / cva**        | Dynamic class management with variants                     |
-| **Lucide-react**      | Icon system with Tailwind-ready SVGs                       |
-| **ESLint + Prettier** | Code style consistency and linting best practices          |
+| Tool                  | Purpose                                                          |
+|-----------------------|------------------------------------------------------------------|
+| **React 19**          | UI library for declarative, component-driven interfaces          |
+| **TypeScript**        | Strong typing & IntelliSense                                    |
+| **Vite**              | Fast bundler with HMR                                            |
+| **Tailwind CSS**      | Utility-first styling                                            |
+| **React Router DOM**  | Routing with layout & nested routes                             |
+| **Zod**               | Form validation with TypeScript inference                        |
+| **React Hook Form**   | Lightweight form library with great performance                  |
+| **Framer Motion**     | Animations & transitions                                         |
+| **Lucide-react**      | Icon library for modern interfaces                               |
+| **Storybook**         | UI component explorer with design system docs                    |
+| **Chromatic**         | CI for Storybook, visual testing, and UI snapshots               |
+| **ESLint & Prettier** | Code linting and formatting enforcement                          |
+| **clsx & cva**        | Condition-based styling + variant support                        |
 
 ---
 
-## 👢 Project Structure
+## 📁 Folder Structure
 
 ```
 src/
-│
-├── assets/         # Static images, icons, logos
-├── components/     # Atomic design system (atoms, molecules, organisms)
-├── constants/      # Global constants (enums, configs, keys)
-├── hooks/          # Custom React hooks
-├── layout/         # Layout components like <MainLayout />
-├── lib/            # Utilities, API clients, formatters
-├── pages/          # Page-level components (used by router)
-├── router/         # Centralized route definitions with React Router v6+
-├── styles/         # Tailwind config, global styles, theming
-├── types/          # Shared TypeScript types and interfaces
-├── App.tsx         # Entry point component with RouterProvider
-└── main.tsx        # Vite entry point
+├── assets/             # Static assets like images, logos, icons
+├── components/         
+│   ├── atoms/          # UI primitives (e.g., Button, Input, Avatar)
+│   ├── molecules/      # Grouped atoms (e.g., SkillPill, FallbackMessage)
+│   └── organisms/      # Complex reusable UI blocks (e.g., ResumeHeader, ErrorBoundary)
+├── hooks/              # Custom hooks (e.g., useMobileMenu, useThemeToggle)
+├── layout/             # Application-level layouts (e.g., MainLayout)
+├── lib/                # Utilities (e.g., cn, helpers)
+├── pages/              # Route-level views (e.g., Home, Contact, Projects)
+├── router/             # App routing setup using React Router
+├── styles/             # Tailwind global styles, animations
+├── types/              # Shared TypeScript types/interfaces
+├── App.tsx             # Entry point with RouterProvider + Suspense
+└── main.tsx            # Vite bootstrap with theme/provider wrapping
 ```
-
-This structure follows **Atomic Design + Scalable Feature-based Separation**, making it easy to maintain, test, and grow with new features or domains.
 
 ---
 
-## 📚 Storybook Integration
+## 📘 Component Documentation
 
-This project uses Storybook with:
+This project includes full Storybook support with Chromatic for:
 
-- Tailwind theming (light/dark toggle)
-- `@storybook/test` for snapshot visual testing
-- Component-driven workflows with isolated `Input`, `Form`, and more
-- Chromatic CI integration for visual regression testing
+- 🧩 **Visual regression testing**
+- 🧪 **Autodocs & interaction testing**
+- 🧱 **Atomic design structure**
+- 🧼 **Lint-safe UI development workflow**
 
-Run Storybook locally:
+### Run Storybook:
 
 ```bash
 yarn storybook
 ```
 
+### Test Snapshots with Chromatic:
+
+```bash
+yarn chromatic
+```
+
 ---
 
-## ✅ Chromatic Visual CI
+## 💥 Error Handling
 
-This project runs **Chromatic** on every PR using GitHub Actions:
+Includes a custom `ErrorBoundary` component that:
 
-- Blocks merges if visual diffs are found
-- Publishes a preview of the full Storybook
-- Snapshot testing per component story
+- Catches client-side rendering errors
+- Shows an animated fallback with options:
+  - 🔁 Reload page
+  - 🏠 Go to homepage
+  - 🐛 Open GitHub issue
 
-[![Chromatic](https://github.com/JonaLGarza/porfolio/actions/workflows/chromatic.yml/badge.svg)](https://github.com/JonaLGarza/porfolio/actions/workflows/chromatic.yml)
+✅ Also tested with Storybook via `ErrorThrowingComponent`.
+
+---
+
+## 🔀 Lazy Routing & Suspense
+
+Dynamic routing is enabled via `React.lazy()` and `Suspense`:
+
+```tsx
+const Home = lazy(() => import("../pages/Home"));
+const Projects = lazy(() => import("../pages/Projects"));
+```
+
+Wrapped in a `LazyWrapper` component that shows a fallback while loading:
+
+```tsx
+<Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+  <Outlet />
+</Suspense>
+```
 
 ---
 
 ## 📦 Scripts
 
 ```bash
-yarn dev             # Local dev server (Vite)
+yarn dev             # Start dev server (Vite)
 yarn build           # Production build
-yarn preview         # Preview production locally
-yarn storybook       # Run Storybook locally
-yarn chromatic       # Run Chromatic visual CI
+yarn preview         # Preview the built site locally
+yarn storybook       # Run Storybook
+yarn chromatic       # Push Storybook to Chromatic
 yarn lint            # Run ESLint
 ```
 
 ---
 
-## 👨‍💻 Dev Notes
+## 🌍 Deployment (GitHub Pages)
 
-This setup is built for clarity, scale, and flexibility:
+Production builds are deployed to GitHub Pages via GitHub Actions.
 
-- Uses `vite-tsconfig-paths` for `@/` aliasing
-- Strict linting rules for consistency
-- Modular component layers (atoms → molecules → organisms)
-- Tailwind integrated into Storybook previews
-- Ready for feature flags, async loading, and SSR if needed
+> `vite.config.ts` uses `base: '/porfolio/'` for correct public paths.
 
----
+```ts
+export default defineConfig({
+  base: '/porfolio/',
+  plugins: [...],
+});
+```
 
-## 🥪 Testing Setup
-
-Coming soon: integration with `Vitest`, `Testing Library`, and `@storybook/test-runner`.
-
----
-
-## 📘 Storybook Dev Notes
-
-For developers:
-
-- All components follow atomic structure (`atoms`, `molecules`, `organisms`)
-- Write stories using `CSF` and `autodocs` tags for automated documentation
-- Test accessibility and interaction with `@storybook/test`, `@storybook/addon-a11y`, and `@storybook/test-runner`
-- Run `yarn test-storybook` to generate interaction test snapshots (coming soon)
+✅ Deployed at: [https://jonalgarza.github.io/porfolio](https://jonalgarza.github.io/porfolio)
 
 ---
 
-## 🙌 Contributions
+## 🧪 Future Plans
 
-This is a personal project for my portfolio and technical showcase. If you'd like to collaborate or ask anything, feel free to open a discussion or PR!
+- [ ] Vitest + React Testing Library for integration testing
+- [ ] Playwright for E2E tests
+- [ ] 3D experience using Three.js
+- [ ] Internationalization (i18n)
+- [ ] PDF resume export with Puppeteer
 
 ---
 
-## 📧 Contact
+## 🙋🏻‍♂️ About Me
 
-Built with ❤️ by Jonathan Arturo López de la Garza  
-• [LinkedIn](https://www.linkedin.com/in/your-profile/)
-• [Twitter](https://twitter.com/your_handle)
-• [My Storybook Live!](https://67faeb0c6c52986ce6872a8d-wmhqxulzdj.chromatic.com/)
-• [Chromatic  library](https://www.chromatic.com/library?appId=67faeb0c6c52986ce6872a8d)
+**Jonathan Arturo López de la Garza**  
+Senior Frontend Engineer — React | TypeScript | DevOps Curious  
+🧠 Always learning | 🎯 Focused on clean UX | 💻 Lives in Saltillo, MX
+
+- 💼 [LinkedIn](https://linkedin.com/in/jonathan-arturo-lopez-de-la-garza)
+- 🧠 [GitHub](https://github.com/JonaLGarza)
+- 📘 [Storybook Live](https://67faeb0c6c52986ce6872a8d-wmhqxulzdj.chromatic.com/)
+- 🧪 [Chromatic Library](https://www.chromatic.com/library?appId=67faeb0c6c52986ce6872a8d)
+
+---
+
+## 🤝 Contributions
+
+This is a personal showcase, but you're welcome to open PRs, issues, or just leave a ⭐ if you like it!
+
+---
+
+🛠 Built with love, caffeine, and Tailwind magic.
