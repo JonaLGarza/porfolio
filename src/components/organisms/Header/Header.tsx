@@ -69,15 +69,15 @@ export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
       </nav>
       
       <div>
-      <div className="hidden sm:block">
+      <div className="hidden sm:block cursor-pointer" onClick={handleToggleTheme}>
         {t('header.toggle_theme', {
         theme: t(`header.${resolvedTheme === 'dark' ? 'light_mode' : 'dark_mode'}`)
         })}
         <Button
           variant="ghost"
           size="icon"
-          onClick={handleToggleTheme}
           aria-label="Toggle Theme"
+          className="cursor-pointer"
         >
           {resolvedTheme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
         </Button>
