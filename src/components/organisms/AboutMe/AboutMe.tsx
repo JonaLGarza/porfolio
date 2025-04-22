@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import Button from "../../atoms/Button";
 import { Download } from "lucide-react";
 import ResumeHeader from "../ResumeeHeader/ResumeeHeader";
+import { useTranslation } from "react-i18next";
 
 const AboutMe = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-5 px-4 md:py-5 max-w-4xl mx-auto">
       <ResumeHeader />
@@ -13,7 +15,7 @@ const AboutMe = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        I’m Jonathan Arturo López de la Garza, a passionate creative and results-driven senior software engineer with 8+ years of experience designing and building scalable web and mobile applications using React, Next.js, NestJS, and modern TypeScript stacks. Adept in atomic design, Storybook-driven UIs, and API architecture. Founder of multiple ventures including JG Charcutería and Nos imperii. Passionate about clean code, seamless UX, and pushing the limits of front-end innovation with tools like Three.js and Docker.
+        {t('description')}
       </motion.p>
 
       <motion.div
@@ -24,7 +26,7 @@ const AboutMe = () => {
         <Button variant="secondary" asChild>
 
           <a href="/porfolio/jonathanlopezresumee.pdf" download>
-            <Download size={16} />Download Resume
+            <Download size={16} />{t('download_resume')}
           </a>
         </Button>
       </motion.div>
