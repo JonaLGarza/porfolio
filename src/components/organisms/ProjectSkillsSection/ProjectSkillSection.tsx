@@ -11,13 +11,17 @@ interface Project {
 export default function ProjectsSkillsSection() {
   const { t } = useTranslation();
 
+  // Get skills and projects from translations
+  const skills = t("skills.items", { returnObjects: true }) as string[];
+  const projects = t("projects_section.items", { returnObjects: true }) as Project[];
+
   return (
     <section className="py-16 px-4 max-w-4xl mx-auto space-y-16">
       {/* Skills Section */}
       <div>
         <h2 className="text-2xl font-bold mb-6">{t("skills.heading")}</h2>
         <div className="flex flex-wrap gap-3">
-          {(t("skills.items", { returnObjects: true }) as string[]).map((skill) => (    
+          {Array.isArray(skills) && skills.map((skill) => (    
             <SkillPill key={skill} label={skill} />
           ))}
         </div>
@@ -27,7 +31,7 @@ export default function ProjectsSkillsSection() {
       <div>
         <h2 className="text-2xl font-bold mb-6">{t("projects_section.heading")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {(t("projects_section.items", { returnObjects: true }) as Project[]).map((project) => (
+          {Array.isArray(projects) && projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
