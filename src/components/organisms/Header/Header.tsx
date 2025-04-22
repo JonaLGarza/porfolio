@@ -3,6 +3,8 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import Button from "../../atoms/Button";
 import { FaReact } from "react-icons/fa"; // react-icons for a React logo
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "../../molecules/LanguageSwitcher/LanguageSwitcher";
 
 type HeaderProps = {
   menuOpen: boolean;
@@ -12,6 +14,7 @@ type HeaderProps = {
 
 export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
 
   const handleToggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -23,7 +26,7 @@ export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
         <h1 className="text-xl font-bold">Jonathan Lopez</h1>
         <div className="flex items-center gap-1 text-muted-foreground text-xs mt-1">
           <FaReact className="text-sky-500 animate-spin-slow" />
-          <span>Built with React + Vite</span>
+          <span>{t('header.builtwith')}</span>
         </div>
       </div>
 
@@ -49,24 +52,27 @@ export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
           to="/porfolio"
           className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
         >
-          Home
+          {t('header.home')}
         </NavLink>
         <NavLink
           to="/porfolio/projects"
           className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
         >
-          Projects
+          {t('header.projects')}
         </NavLink>
         <NavLink
           to="/porfolio/contact"
           className={({ isActive }) => (isActive ? "text-primary font-semibold" : "")}
         >
-          Contact
+          {t('header.contact')}
         </NavLink>
       </nav>
-
+      
+      <div>
       <div className="hidden sm:block">
-        Toggle {resolvedTheme === "dark" ? "light" : "dark"} mode
+        {t('header.toggle_theme', {
+        theme: t(`header.${resolvedTheme === 'dark' ? 'light_mode' : 'dark_mode'}`)
+        })}
         <Button
           variant="ghost"
           size="icon"
@@ -75,6 +81,8 @@ export default function Header({ menuOpen, toggleMenu }: HeaderProps) {
         >
           {resolvedTheme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
         </Button>
+      </div>
+      <LanguageSwitcher />
       </div>
     </header>
   );
