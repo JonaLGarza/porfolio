@@ -1,0 +1,36 @@
+{
+    "welcome": "Welcome to my portfolio",
+    "resumeoverview": "Resume Overview",
+    "language":"language",
+    "header": {
+        "builtwith":"Built with React + Vite",
+        "home": "Home",
+        "projects": "Projects",
+        "contact": "Contact",
+        "toggle_theme": "Toggle {{theme}} mode",
+        "dark_mode": "dark",
+        "light_mode": "light"
+    },
+    "go_home": "Go to Homepage",
+    "timeline_heading": "Timeline",
+    "timeline1": {
+      "year": "2020 – Present",
+      "title": "Senior Frontend Developer – ArteDigital",
+      "description": "Developed and deployed 6+ scalable apps with advanced A/B testing, Storybook integration, and atomic design."
+    },
+    "timeline2": {
+      "year": "2018 – 2020",
+      "title": "Full Stack Developer – Hexaware",
+      "description": "Built reusable boilerplates and improved UI/UX across several React and .NET applications."
+    },
+    "timeline3": {
+      "year": "2017 – 2018",
+      "title": "Full Stack Developer – Nos Imperii, Teisense, Calisis",
+      "description": "Created ERP, OEE dashboards, and blockchain apps winning 6+ hackathons for innovation."
+    },
+    "timeline4": {
+      "year": "2015 – 2017",
+      "title": "UTC – Associate Degree in IT Engineering",
+      "description": "Completed technical degree with a focus on full stack development and systems design."
+    }
+}
