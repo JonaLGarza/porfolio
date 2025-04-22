@@ -11,17 +11,21 @@ interface IProjects {
   link?: string;
   tags: string[];
 }
-
+  
 export default function ProjectsSection() {
   const { t } = useTranslation("projects");
   const [query, setQuery] = useState("");
 
+  // Get projects from translations and ensure it's an array
   const projects = t("items", { returnObjects: true }) as IProjects[];
 
-  const filtered = projects.filter((project) => {
-    const text = `${project.title} ${project.description} ${project.tags.join(" ")}`.toLowerCase();
-    return text.includes(query.toLowerCase());
-  });
+  // Only filter if projects is an array
+  const filtered = Array.isArray(projects) 
+    ? projects.filter((project) => {
+        const text = `${project.title} ${project.description} ${project.tags.join(" ")}`.toLowerCase();
+        return text.includes(query.toLowerCase());
+      })
+    : [];
 
   return (
     <section className="py-20 px-4 md:py-32 max-w-6xl mx-auto text-center">
