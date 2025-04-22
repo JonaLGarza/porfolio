@@ -33,9 +33,9 @@ export default function ProjectsSkillsSection() {
             description="Minimalist advertisement platform for one-off user friendly websites."
           />
           <ProjectCard
-            title="Rick and Morty App"
-            badges={["React", "Redux", "Docker"]}
-            description="Real-time interaction test focused context management using GraphQL and facade services."
+            title="Rentals Admin Dashboard"
+            badges={["Next.js", "Redux", "Docker", "Firebase"]}
+            description="Internal booking and analytics panel for house rentals in Saltillo."
           />
           <ProjectCard
             title="Component Library"
