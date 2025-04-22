@@ -35,6 +35,39 @@
             }
         ]
     },
+    "skills": {
+        "heading": "Habilidades",
+        "items": [
+            "Frontend",
+            "Redux",
+            "TypeScript",
+            "Tailwind",
+            "Storybook",
+            "NestJS",
+            "Django",
+            ".NET Core"
+        ]
+    },
+    "projects_section": {
+        "heading": "Proyectos",
+        "items": [
+            {
+                "title": "Build-Runant Raat-prodön",
+                "description": "Plataforma publicitaria minimalista para sitios web amigables de un solo uso.",
+                "badges": ["Frontend", "UX"]
+            },
+            {
+                "title": "Panel de Administración de Rentas",
+                "description": "Panel interno de reservas y análisis para alquileres en Saltillo.",
+                "badges": ["Next.js", "Redux", "Docker", "Firebase"]
+            },
+            {
+                "title": "Biblioteca de Componentes",
+                "description": "Iniciativa de biblioteca de componentes front-end orientada a átomos con enfoque en variables CSS.",
+                "badges": ["React", "Storybook", "Tailwind", "Docker"]
+            }
+        ]
+    },
     "timeline_heading": "Línea de tiempo",
     "timeline1": {
       "year": "2020 – Presente",

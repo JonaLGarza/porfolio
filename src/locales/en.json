@@ -11,7 +11,7 @@
         "dark_mode": "dark",
         "light_mode": "light"
     },
-    "description":"I’m Jonathan Arturo López de la Garza, a passionate creative and results-driven senior software engineer with 8+ years of experience designing and building scalable web and mobile applications using React, Next.js, NestJS, and modern TypeScript stacks. Adept in atomic design, Storybook-driven UIs, and API architecture. Founder of multiple ventures including JG Charcutería and Nos imperii. Passionate about clean code, seamless UX, and pushing the limits of front-end innovation",
+    "description":"I'm Jonathan Arturo López de la Garza, a passionate creative and results-driven senior software engineer with 8+ years of experience designing and building scalable web and mobile applications using React, Next.js, NestJS, and modern TypeScript stacks. Adept in atomic design, Storybook-driven UIs, and API architecture. Founder of multiple ventures including JG Charcutería and Nos imperii. Passionate about clean code, seamless UX, and pushing the limits of front-end innovation",
     "download_resume":"Download Resume",
     "go_home": "Go to Homepage",
     "projects": {
@@ -25,13 +25,46 @@
             },
             {
             "title": "Client Web App",
-            "description": "Custom ordering platform for Jonathan’s charcuterie business using Vite + Tailwind.",
+            "description": "Custom ordering platform for Jonathan's charcuterie business using Vite + Tailwind.",
             "tags": ["Vite", "Tailwind", "Storybook"]
             },
             {
             "title": "Rentals Admin Dashboard",
             "description": "Internal booking and analytics panel for house rentals in Saltillo.",
             "tags": ["Next.js", "Charts", "Firebase"]
+            }
+        ]
+    },
+    "skills": {
+        "heading": "Skills",
+        "items": [
+            "Frontend",
+            "Redux",
+            "TypeScript",
+            "Tailwind",
+            "Storybook",
+            "NestJS",
+            "Django",
+            ".NET Core"
+        ]
+    },
+    "projects_section": {
+        "heading": "Projects",
+        "items": [
+            {
+                "title": "Build-Runant Raat-prodön",
+                "description": "Minimalist advertisement platform for one-off user friendly websites.",
+                "badges": ["Frontend", "UX"]
+            },
+            {
+                "title": "Rentals Admin Dashboard",
+                "description": "Internal booking and analytics panel for house rentals in Saltillo.",
+                "badges": ["Next.js", "Redux", "Docker", "Firebase"]
+            },
+            {
+                "title": "Component Library",
+                "description": "Atomic-oriented front-end component library initiative with CSS variable-first approach.",
+                "badges": ["React", "Storybook", "Tailwind", "Docker"]
             }
         ]
     },
