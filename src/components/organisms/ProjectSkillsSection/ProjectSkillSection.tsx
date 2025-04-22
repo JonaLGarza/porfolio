@@ -1,23 +1,23 @@
 import { SkillPill } from "../../atoms/SkillPill/SkillPill";
 import { ProjectCard } from "../../molecules/ProjectCard/ProjectCard";
+import { useTranslation } from "react-i18next";
+
+interface Project {
+  title: string;
+  description: string;
+  badges: string[];
+}
 
 export default function ProjectsSkillsSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 px-4 max-w-4xl mx-auto space-y-16">
       {/* Skills Section */}
       <div>
-        <h2 className="text-2xl font-bold mb-6">Skills</h2>
+        <h2 className="text-2xl font-bold mb-6">{t("skills.heading")}</h2>
         <div className="flex flex-wrap gap-3">
-          {[
-            "Frontend",
-            "Redux",
-            "TypeScript",
-            "Tailwind",
-            "Storybook",
-            "NestJS",
-            "Django",
-            ".NET Core",
-          ].map((skill) => (    
+          {(t("skills.items", { returnObjects: true }) as string[]).map((skill) => (    
             <SkillPill key={skill} label={skill} />
           ))}
         </div>
@@ -25,23 +25,16 @@ export default function ProjectsSkillsSection() {
 
       {/* Projects Section */}
       <div>
-        <h2 className="text-2xl font-bold mb-6">Projects</h2>
+        <h2 className="text-2xl font-bold mb-6">{t("projects_section.heading")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <ProjectCard
-            title="Build-Runant Raat-prodön"
-            badges={["Frontend", "UX"]}
-            description="Minimalist advertisement platform for one-off user friendly websites."
-          />
-          <ProjectCard
-            title="Rentals Admin Dashboard"
-            badges={["Next.js", "Redux", "Docker", "Firebase"]}
-            description="Internal booking and analytics panel for house rentals in Saltillo."
-          />
-          <ProjectCard
-            title="Component Library"
-            badges={["React", "Storybook", "Tailwind", "Docker"]}
-            description="Atomic-oriented front-end component library initiative with CSS variable-first approach."
-          />
+          {(t("projects_section.items", { returnObjects: true }) as Project[]).map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              badges={project.badges}
+              description={project.description}
+            />
+          ))}
         </div>
       </div>
     </section>
