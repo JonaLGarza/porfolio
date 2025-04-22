@@ -11,6 +11,8 @@
         "dark_mode": "dark",
         "light_mode": "light"
     },
+    "description":"I’m Jonathan Arturo López de la Garza, a passionate creative and results-driven senior software engineer with 8+ years of experience designing and building scalable web and mobile applications using React, Next.js, NestJS, and modern TypeScript stacks. Adept in atomic design, Storybook-driven UIs, and API architecture. Founder of multiple ventures including JG Charcutería and Nos imperii. Passionate about clean code, seamless UX, and pushing the limits of front-end innovation",
+    "download_resume":"Download Resume",
     "go_home": "Go to Homepage",
     "timeline_heading": "Timeline",
     "timeline1": {
